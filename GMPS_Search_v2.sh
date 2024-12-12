@@ -7,7 +7,7 @@ rootdir=`dirname $FILE`
 #----------------------------------------------------
 app_path=$rootdir/Apps/
 foldseek=$app_path/foldseek/bin/foldseek
-usalign=$app_path/USalign/bin/USalign
+usalign="$app_path/USalign/bin/USalign"
 seqkit=$app_path/bin/seqkit
 
 mkblastdb=$app_path/ncbi-blast-2.15.0+/bin/makeblastdb
