@@ -121,7 +121,7 @@ done
 help_info(){
     echo ""
     #echo 'Usage: DLDB_Search.sh -q query.pdb -c Bacteria -s SpeciesTaxid_357276 -o out'
-    echo 'Usage: DLDB_Search.sh -q query.pdb -c Bacteria -s Bifidobacterium_adolescentis -o out'
+    echo 'Usage: GMPS_Search.sh -q query.pdb -c Bacteria -s Bifidobacterium_adolescentis -o output'
     echo ""
     echo '            -q|--query            Give the query pdb file'
     echo ""
