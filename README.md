@@ -9,6 +9,11 @@ Most executables are already precompiled for 64bit Linux at "Apps/".
 pymol=/usr/bin/pymol
 ```
 
+This package only includes structures of one species (the bacteria Bifidobacterium adolescentis). To download structures of other species:
+```bash
+./GMPS_download.sh
+```
+
 ## Run ##
 
 Get help document:
