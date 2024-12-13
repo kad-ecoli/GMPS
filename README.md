@@ -18,6 +18,10 @@ Get help document:
 
 An example to search Human AADC through Bifidobacterium adolescentis
 ```bash
+./GMPS_Search_v2.sh -q example/3rbf.pdb  -c Bacteria -s Bifidobacterium_adolescentis -o output
+```
+or simply
+```bash
 ./GMPS_Search_v2.sh
 ```
 The output files will be written to "output/results/C_Bacteria_S_Bifidobacterium_adolescentis_Q_3rbf/", where usalign_hits.csv is the list of identified hits, while the superimposed structures for the top 10 hits are available at "best_hit_models/".
