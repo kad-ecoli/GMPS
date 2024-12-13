@@ -3,7 +3,6 @@ FILE=`readlink -e $0`
 rootdir=`dirname $FILE`
 data_path=$rootdir/database_final
 
-#wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286/data/Typephages.tar.gz?response-content-disposition=attachment%3B%20filename%3DTypephages.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20241213%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241213T201458Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a207c246a6b6d208e9d9e51a06f79cc6ceea38cd4d8179f028b9efad9709982a' -O $data_path/Typephages.tar.gz
 wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286/data/prophage.tar.gz?response-content-disposition=attachment%3B%20filename%3Dprophage.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20241213%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241213T201432Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=dd64d69dfe18b0583312f0f8b1d3fefd2edc422014bc357d6608e28e6584e1fa' -O $data_path/prophage.tar.gz
 wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286/data/phage.tar.gz?response-content-disposition=attachment%3B%20filename%3Dphage.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20241213%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241213T201406Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cf90e76eb5880f642f923fa45ca263f37ed245e0b49aa40bbaf177e49670d05c' -O $data_path/phage.tar.gz
 wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286/data/bacteria_8.tar.gz?response-content-disposition=attachment%3B%20filename%3Dbacteria_8.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20241213%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241213T201325Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1102ef3c5298e4e74b313fb469274faea3a3de6dbd617f0d6b0e04b63b4ed260' -O $data_path/bacteria_8.tar.gz
@@ -16,6 +15,7 @@ wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286
 wget 'https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/v3/333286/data/bacteria_1.tar.gz?response-content-disposition=attachment%3B%20filename%3Dbacteria_1.tar.gz&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20241213%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241213T200519Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a90bfa6a8718620d24ab794ae8cf77fac975b961c255b1600c92438e694906d8' -O $data_path/bacteria_1.tar.gz
 
 cd $data_path
+
 tar -xvf $data_path/phage.tar.gz
 mv new_phage_tar_gz phage
 cd $data_path/phage
@@ -40,7 +40,7 @@ for m in {1..8};do
     tar -xvf $data_path/bacteria_$m.tar.gz
     for target in `ls $data_path/bacteria_$m/*.tar.gz`;do
         cd $data_path/Bacteria
-	tar -xvf $data_path/bacteria_$m/$target
-	rm $data_path/bacteria_$m/$target
+	tar -xvf $target
+	rm $target
     done
 done
